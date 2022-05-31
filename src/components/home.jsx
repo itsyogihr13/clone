@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Data } from "./data";
-import "./data";
+// import "./data";
 
 export const Home = () => {
   const [data, SetData] = useState(Data);
@@ -46,7 +46,7 @@ export const Home = () => {
     SetData([...data]);
   }
 
-  function handleimg() {}
+  // function handleimg() {}
 
   return (
     <div>
@@ -78,6 +78,12 @@ export const Home = () => {
           <img src={el.img_src} alt="" srcset="" onClick={handleimg} />
           <p>{el.Price} </p>
           <p>{el.brand} </p>
+        </div>
+      ))}
+
+      {data.map((el) => (
+        <div>
+          <img src={el.img_src} alt="" />
         </div>
       ))}
     </div>
